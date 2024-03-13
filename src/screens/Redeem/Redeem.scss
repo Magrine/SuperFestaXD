@@ -1,0 +1,103 @@
+.redeem {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  span {
+    font-size: 24px;
+    font-weight: lighter;
+    max-width: 70vw;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  input {
+    width: 80vw;
+    font-size: 2rem;
+    padding: 0.75rem;
+    border-radius: 0;
+    border: none;
+    color: black;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+}
+.accepted {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .accepted_icon {
+    width: 25vw;
+    height: 25vw;
+    background-color: #4cae50;
+    border-radius: 50%;
+    padding: 1rem;
+  }
+  .theme {
+    display: flex;
+    flex-direction: row;
+    background-color: #655ff0;
+    padding: 1rem;
+    font-size: 22px;
+    span {
+      font-weight: bold;
+    }
+    p {
+      margin-left: 4px;
+    }
+  }
+  .accepted_text {
+    width: 80vw;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 0 2rem 0;
+  }
+}
+.erro,
+.accepted {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    font-size: 32px;
+    line-height: 42px;
+    padding: 1rem;
+  }
+  .erro_icon {
+    width: 25vw;
+    height: 25vw;
+    background-color: #ff5a54;
+    border-radius: 50%;
+    padding: 1rem;
+  }
+  span {
+    width: 80vw;
+    font-size: 18px;
+    text-align: center;
+  }
+  ul {
+    width: 70vw;
+    padding: 3rem 0;
+    list-style: none;
+    li {
+      font-size: 16px;
+      padding: 0.5rem 0;
+    }
+    li::before {
+      color: red;
+      content: "\2022";
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  }
+}

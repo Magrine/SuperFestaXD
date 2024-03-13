@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden">
+    <!-- Carregue a nova textura -->
+    <script>
+      const textureCache = JSON.parse(
+        localStorage.getItem("snaps_user_data")
+      ).texture;
+      const infoCache = JSON.parse(
+        localStorage.getItem("snaps_user_data")
+      ).info;
+
+      AFRAME.registerComponent("change-texture", {
+        init: function () {
+          var el = this.el;
+          el.addEventListener("model-loaded", function () {
+            var mesh = el.getObject3D("mesh");
+            mesh.traverse(function (node) {
+              if (node.isMesh) {
+                if (node.material.map) {
+                  var textureName = node.material.map.name;
+                  if (
+                    textureName ===
+                    "portrait-of-blond-little-girl-NMSF00135.jpg"
+                  ) {
+                    node.material.map = new THREE.TextureLoader().load(
+                      textureCache
+                    );
+                    node.material.needsUpdate = true;
+                    node.material.map.flipY = false;
+                  }
+                  //======================================================
+                  if (textureName === "Nome_Idade_alpha_Nome_Idade.png") {
+                    node.material.map = new THREE.TextureLoader().load(
+                      infoCache
+                    );
+                    node.material.needsUpdate = true;
+                    node.material.map.flipY = false;
+                  }
+                }
+              }
+            });
+          });
+        },
+      });
+    </script>
+
+    <!-- Marque o padrão -->
+    <a-scene
+      embedded
+      light="defaultLightsEnabled: false"
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-marker
+        preset="custom"
+        type="pattern"
+        url="pattern-marker.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        smooth="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity
+          id="bowser-model"
+          position="0 0.5 0"
+          rotation="-140 0 0"
+          scale="0.5 0.5 0.5"
+          gltf-model="Gltf/Girls/Girls_0021.gltf"
+          class="clickable"
+          material="color: red"
+          gesture-handler
+          animation-mixer
+          change-texture
+        ></a-entity>
+      </a-marker>
+    </a-scene>
+    <a-entity camera look-controls></a-entity>
+  </body>
+</html>

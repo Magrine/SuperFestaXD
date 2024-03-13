@@ -1,0 +1,67 @@
+/*Reset browser CSS*/
+$azul-escuro: #3a2a9f;
+$azul-claro: #3d39a7;
+$rosa: #c94c8d;
+$branco: #dedede;
+$vermelho: #dd4848;
+$cinza: #989898;
+
+.modal_container {
+  position: relative;
+  border-radius: 20px;
+  width: 90vw;
+  max-height: 70vh;
+  background-color: #ffffff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .close_modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    z-index: 100;
+    color: black !important;
+  }
+
+  .list {
+    max-height: 60%;
+    overflow-y: scroll;
+    .list-item {
+      padding: 0.5rem 0;
+      h3 {
+        text-align: left;
+        color: $cinza;
+      }
+      p {
+        text-align: left;
+        padding: 0;
+      }
+    }
+  }
+
+  h2 {
+    color: $vermelho;
+    text-align: center;
+    font-size: 4vw;
+    padding: 1rem 0 0 0;
+  }
+
+  p {
+    color: $cinza;
+    font-size: 3vw;
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+  a {
+    text-decoration: underline;
+    color: $cinza;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 4vw;
+  }
+}

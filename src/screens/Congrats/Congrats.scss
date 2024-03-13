@@ -1,0 +1,74 @@
+.congrats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #dedede;
+  margin-top: 10vh;
+  .congrats-header {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 4vw;
+    .congrats-img {
+      font-size: 25vw;
+      margin: 1rem 0;
+    }
+  }
+  .next-steps {
+    text-align: center;
+  }
+  .next-steps_title {
+    padding: 1rem;
+    font-size: 4.5vw;
+    font-weight: 200;
+  }
+  .next-steps_container {
+    width: 80vw;
+    margin: 0 auto;
+    .next-steps_item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 1.5rem 0;
+      .next-step_number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #c94c8d;
+        border-radius: 16px;
+        width: 32px;
+        height: 32px;
+        color: #dedede;
+        font-weight: 500;
+      }
+      .next-step_text {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        padding-left: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+  .share {
+    max-width: 70vw;
+    margin: 1rem auto;
+    .share-link {
+      background-color: #716bdc;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+
+      .share-icon {
+        font-size: 10vw;
+        margin: 0.5rem;
+      }
+    }
+  }
+}
